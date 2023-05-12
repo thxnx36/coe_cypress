@@ -36,10 +36,19 @@ it('Create data', () => {
   cy.get(':nth-child(9) > .text-sm > :nth-child(2) > .items-center > .flex > span').click()
   cy.wait(1000)
   cy.get('.filament-button').click()
+  cy.wait(1000)
+  // select the file input element
+const fileInput = cy.get('input[type="file"]')
+
+// use cypress-file-upload library to upload a file
+const filePath = 'pic.jpg'
+fileInput.attachFile(filePath)
+
+// assert that the file has been uploaded successfully
+  cy.wait(5000)
   cy.get('[id="data.title"]').type('Test')
   cy.get('[id="data.content"]').type('Test create data content')
   cy.get('.filament-page-actions > .text-white').click()
-  cy.get(':nth-child(9) > .text-sm > :nth-child(2) > .items-center > .flex > span').click()
   cy.wait(1000)
 
   ///check in home page
