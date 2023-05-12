@@ -98,7 +98,6 @@ it('Update data', () => {
   cy.get('.mb-6 > .max-w-sm > :nth-child(1)').scrollIntoView({ duration: 2000 })
   cy.wait(1000)
 })
-
 it('Delete data', () => {
 
   cy.visit('https://coe-demo.ntpscrt.com/admin/login')
@@ -112,8 +111,6 @@ it('Delete data', () => {
   .first() // select the first table cell
   .click()
   cy.get('.filament-header > .filament-page-actions > .filament-button').click()
-
-
   cy.wait(2000)
 
 })
