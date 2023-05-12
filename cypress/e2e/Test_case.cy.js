@@ -67,7 +67,35 @@ it('Read data', () => {
   cy.get(':nth-child(9) > .text-sm > :nth-child(2) > .items-center > .flex > span').click()
   cy.wait(1000)
   cy.get('#tableSearchInput').type("test")
+  cy.get('.filament-tables-cell')
+  .first() // select the first table cell
+  .find('a') // find the anchor tag inside the table cell
+  .click()
+  cy.wait(2000)
 
+})
 
+it('Update data', () => {
 
+  cy.visit('https://coe-demo.ntpscrt.com/admin/login')
+
+  cy.get('[type="email"]').type('admin@admin.com')
+  cy.get('[type="password"]').type('secret{Enter}')
+  cy.get(':nth-child(9) > .text-sm > :nth-child(2) > .items-center > .flex > span').click()
+  cy.wait(1000)
+  cy.get('#tableSearchInput').type("test")
+  cy.get('.filament-tables-cell')
+  .first() // select the first table cell
+  .find('a') // find the anchor tag inside the table cell
+  .click()
+  cy.get('[id="data.title"]').clear()
+  cy.get('[id="data.title"]').type('Update')
+  cy.get('[id="data.content"]').clear()
+  cy.get('[id="data.content"]').type('Update data content')
+  cy.get('.filament-form > .filament-page-actions > .text-white').click()
+  cy.visit('https://coe-demo.ntpscrt.com/admin/news?tableSortColumn=created_at&tableSortDirection=desc')
+  cy.wait(1000)
+  cy.visit('https://coe-demo.ntpscrt.com/home')
+  cy.get('.mb-6 > .max-w-sm > :nth-child(1)').scrollIntoView({ duration: 2000 })
+  cy.wait(1000)
 })
