@@ -45,7 +45,7 @@ const filePath = 'pic.jpg'
 fileInput.attachFile(filePath)
 
 // assert that the file has been uploaded successfully
-  cy.wait(5000)
+  cy.wait(3000)
   cy.get('[id="data.title"]').type('Test')
   cy.get('[id="data.content"]').type('Test create data content')
   cy.get('.filament-page-actions > .text-white').click()
@@ -85,7 +85,6 @@ it('Update data', () => {
   cy.get('#tableSearchInput').type("test")
   cy.get('.filament-tables-cell')
   .first() // select the first table cell
-  .find('a') // find the anchor tag inside the table cell
   .click()
   cy.get('[id="data.title"]').clear()
   cy.get('[id="data.title"]').type('Update')
@@ -112,6 +111,6 @@ it('Delete data', () => {
   .click()
   cy.get('.filament-header > .filament-page-actions > .filament-button').click()
   cy.get('button:contains("Confirm")').should('be.visible').click();
-  cy.wait(2000)
+  cy.wait(1000)
 
 })
