@@ -111,6 +111,7 @@ it('Delete data', () => {
   .first() // select the first table cell
   .click()
   cy.get('.filament-header > .filament-page-actions > .filament-button').click()
+  cy.get('button:contains("Confirm")').should('be.visible').click();
   cy.wait(2000)
 
 })
