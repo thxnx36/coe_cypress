@@ -1,7 +1,7 @@
 describe('READ', () => {
     beforeEach(() => {
         cy.login()
-        cy.get(':nth-child(9) > .text-sm > :nth-child(2) > .items-center > .flex > span').click()
+        cy.GoToNewsPage()
     })
 
     it('Search and Selectdata', () => {

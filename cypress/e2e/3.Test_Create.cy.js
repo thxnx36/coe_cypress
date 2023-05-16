@@ -1,8 +1,7 @@
 describe('CREATE', () => {
     beforeEach(() => {
         cy.login()
-        cy.get(':nth-child(9) > .text-sm > :nth-child(2) > .items-center > .flex > span').click()
-    })
+        cy.GoToNewsPage()    })
 
     it('Create data', () => {
 
@@ -14,7 +13,7 @@ describe('CREATE', () => {
         const filePath = 'pic.jpg'
         fileInput.attachFile(filePath)  
         // assert that the file has been uploaded successfully
-        cy.wait(3000)
+        cy.wait(5000)
         cy.get('[id="data.title"]').type('Test')
         cy.get('[id="data.content"]').type('Test create data content')
         cy.get('.filament-page-actions > .text-white').click()
