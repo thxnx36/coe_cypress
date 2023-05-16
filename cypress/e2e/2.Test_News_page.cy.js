@@ -7,7 +7,7 @@ describe('NEWS_PAGE', () => {
         cy.wait(1000)
         cy.get('#tableSearchInput').type("2022")
         cy.wait(1000)
-        cy.get('#tableSearchInput').clear()
+        cy.get('#tableSearchInput').clear().scrollIntoView({ duration: 2000 })
         cy.wait(1000)
         })
 })

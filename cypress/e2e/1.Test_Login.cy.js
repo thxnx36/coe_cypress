@@ -17,6 +17,15 @@ describe('LOGIN', () => {
 
     })
 
+    it('Wrong email and password',() => {    
+        cy.get('[type="email"]').type('user@user.com')
+        cy.get('[type="password"]').type('secret{Enter}')
+
+        cy.get('[type="submit"]').click()
+        cy.wait(1000)
+
+    })
+
     it('login Admin',() => {    
         cy.get('[type="email"]').type('admin@admin.com')
         cy.get('[type="password"]').type('secret{Enter}')
