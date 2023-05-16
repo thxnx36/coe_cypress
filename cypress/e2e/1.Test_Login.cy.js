@@ -25,6 +25,12 @@ describe('LOGIN', () => {
         cy.wait(1000)
 
     })
+    
+    it('Check Remember me',() => {    
+        cy.get('input#remember.filament-forms-checkbox-component').click()
+        cy.wait(1000)
+
+    })
 
     it('login Admin',() => {    
         cy.get('[type="email"]').type('admin@admin.com')

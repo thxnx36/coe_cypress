@@ -13,7 +13,7 @@ describe('CREATE', () => {
         const filePath = 'pic.jpg'
         fileInput.attachFile(filePath)  
         // assert that the file has been uploaded successfully
-        cy.wait(5000)
+        cy.wait(5000)// waiting for upload picture to complete
         cy.get('[id="data.title"]').type('Test')
         cy.get('[id="data.content"]').type('Test create data content')
         cy.get('.filament-page-actions > .text-white').click()
