@@ -22,8 +22,7 @@ describe('DELETE', () => {
         cy.wait(2000)
     })
     it('Check HomePage', () => {
-        cy.visit('https://coe-demo.ntpscrt.com/home')
-        cy.get('.mb-6 > .max-w-sm > :nth-child(1)').scrollIntoView({ duration: 2000 })
-        cy.wait(1000)
+        cy.CheckHomePage()
+
     })
 })
