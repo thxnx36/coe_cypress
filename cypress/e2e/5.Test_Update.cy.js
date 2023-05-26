@@ -4,12 +4,12 @@ describe('UPDATE', () => {
         cy.GoToNewsPage()    
     })
 
-    it('Select and Edit data', () => {
+    it('Select first and Edit data', () => {
         cy.wait(500)
         cy.get('#tableSearchInput').type("test")
         cy.wait(1000)
         cy.get('.filament-tables-cell')
-        .first() // select the first table cell
+        .first()
         .click()
         cy.wait(2000)
         cy.get('[id="data.title"]').clear()
@@ -19,10 +19,11 @@ describe('UPDATE', () => {
         cy.get('.filament-form > .filament-page-actions > .text-white').click()
     })
 
-   
     it('Check HomePage', () => {
         cy.CheckHomePage()
-
+    
     })
+
 })
+
 

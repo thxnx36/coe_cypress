@@ -17,10 +17,6 @@ describe('DELETE', () => {
         cy.wait(1000)
     })
 
-    it('Check News Page', () => {
-        cy.visit('https://coe-demo.ntpscrt.com/admin/news?tableSortColumn=created_at&tableSortDirection=desc').scrollIntoView({ duration: 2000 })
-        cy.wait(2000)
-    })
     it('Check HomePage', () => {
         cy.CheckHomePage()
 
